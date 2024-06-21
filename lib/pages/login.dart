@@ -30,7 +30,7 @@ class Login extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => const MyHomePage(
-                                    title: 'Hola',
+                                    title: 'Holla',
                                   ))),
                       child: const Text('Ok'))
                   // TextField(),
