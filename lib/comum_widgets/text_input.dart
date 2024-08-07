@@ -15,15 +15,14 @@ class InputText extends TextFormField {
 
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
       decoration: InputDecoration(
-        suffixIcon: suffixIcon,
+        suffixIcon: const Icon(Icons.lock_outline_rounded),
         border: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(50)),
         // labelText: 'Enter your email',
-        labelText: labelText,
-        filled: filled,
+        hintText: 'Enter your password',
+        filled: true,
       ),
     );
   }

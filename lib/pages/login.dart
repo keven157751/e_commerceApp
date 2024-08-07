@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/comum_widgets/text_input.dart';
+import 'package:flutterapp/pages/home_page.dart';
 import 'package:flutterapp/comum_widgets/variables.dart';
-import 'package:flutterapp/main.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 class Login extends StatelessWidget {
@@ -40,7 +39,7 @@ class Login extends StatelessWidget {
                       ),
                     ),
                     width: double.infinity,
-                    height: 600,
+                    height: double.infinity,
                     child: Padding(
                       padding: const EdgeInsets.all(margemDefault),
                       child: Column(
@@ -61,18 +60,18 @@ class Login extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(
-                                margemDefault, 8.0, margemDefault, 8.0),
-                            child: InputText(
-                              labelText: 'Enter your email',
-                              suffixIcon: const Icon(Icons.email),
+                          TextFormField(
+                            decoration: InputDecoration(
+                              suffixIcon: const Icon(Icons.mail_rounded),
+                              border: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
+                                  borderRadius: BorderRadius.circular(50)),
+                              hintText: 'Enter your email',
                               filled: true,
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(
-                                margemDefault, 8.0, margemDefault, 8.0),
+                            padding: const EdgeInsets.fromLTRB(0, 8.0, 0, 8.0),
                             child: TextFormField(
                               decoration: InputDecoration(
                                 suffixIcon:
@@ -86,7 +85,8 @@ class Login extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Row(
+                          Flex(
+                            direction: Axis.vertical,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               TextButton(
@@ -95,12 +95,15 @@ class Login extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: FilledButton(
-                                  onPressed: () => Navigator.push(
+                                  onPressed: () {
+                                    Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              const MyHomePage(
-                                                  title: 'Holla'))),
+                                        builder: (context) =>
+                                            const MyHomePage(title: 'Teste'),
+                                      ),
+                                    );
+                                  },
                                   child: const Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
