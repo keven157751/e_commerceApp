@@ -15,10 +15,10 @@ class Login extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment(0.8, 1),
             colors: <Color>[
-              Color(0xffca485c),
-              Color(0xffe16b5c),
-              Color(0xfff39060),
-              Color(0xffffb56b),
+              primaryColor,
+              secundaryColor,
+              thirdColor,
+              fourthColor,
             ], // Gradient from https://learnui.design/tools/gradient-generator.html
             tileMode: TileMode.mirror,
           ),
@@ -33,13 +33,13 @@ class Login extends StatelessWidget {
                   clipper: WaveClipperTwo(),
                   child: Container(
                     decoration: const BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.white60,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
                     ),
                     width: double.infinity,
-                    height: double.infinity,
+                    height: 500,
                     child: Padding(
                       padding: const EdgeInsets.all(margemDefault),
                       child: Column(
@@ -90,8 +90,9 @@ class Login extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               TextButton(
-                                  onPressed: () {},
-                                  child: const Text('Forgot password?')),
+                                onPressed: () {},
+                                child: const Text('Forgot password?'),
+                              ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: FilledButton(
@@ -100,7 +101,7 @@ class Login extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            const MyHomePage(title: 'Teste'),
+                                            const MyHomePage(title: 'Page'),
                                       ),
                                     );
                                   },
