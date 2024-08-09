@@ -17,21 +17,20 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
+        height: 60,
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
           });
         },
-        indicatorColor: Colors.amber,
+        indicatorColor: thirdColor,
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(
-            selectedIcon: Icon(Icons.home),
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
+            icon: Icon(Icons.home),
+            label: 'home',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Icons.home),
             icon: Icon(Icons.settings),
             label: 'settings',
           ),
