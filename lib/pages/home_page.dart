@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/comum_widgets/variables.dart';
 import 'package:flutterapp/pages/settings_page.dart';
 
 class MyHomePage extends StatefulWidget {
