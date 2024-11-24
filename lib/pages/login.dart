@@ -19,7 +19,7 @@ class Login extends StatelessWidget {
               secundaryColor,
               thirdColor,
               fourthColor,
-            ], // Gradient from https://learnui.design/tools/gradient-generator.html
+            ],
             tileMode: TileMode.mirror,
           ),
         ),
@@ -72,16 +72,21 @@ class Login extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.fromLTRB(0, 8.0, 0, 8.0),
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                suffixIcon:
-                                    const Icon(Icons.lock_outline_rounded),
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(50)),
-                                // labelText: 'Enter your email',
-                                hintText: 'Enter your password',
-                                filled: true,
+                            child: Material(
+                              shadowColor: Colors.grey,
+                              elevation: 20,
+                              borderRadius: BorderRadius.circular(50),
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  suffixIcon:
+                                      const Icon(Icons.lock_outline_rounded),
+                                  border: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.circular(50)),
+                                  // labelText: 'Enter your email',
+                                  hintText: 'Enter your password',
+                                  filled: true,
+                                ),
                               ),
                             ),
                           ),

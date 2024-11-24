@@ -5,12 +5,11 @@ class InputText extends TextFormField {
     super.key,
     super.controller,
     required this.labelText,
-    required this.suffixIcon,
     required this.filled,
   });
 
   final String labelText;
-  final Icon suffixIcon;
+  // Icon? suffixIcon;
   final bool filled;
 
   Widget build(BuildContext context) {

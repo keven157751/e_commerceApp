@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class SettingsPage extends StatelessWidget {
         child: SizedBox.expand(
           child: Center(
             child: Text(
-              'Settings page',
+              'Profile page',
             ),
           ),
         ),

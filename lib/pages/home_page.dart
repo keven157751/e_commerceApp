@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/comum_widgets/variables.dart';
-import 'package:flutterapp/pages/settings_page.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutterapp/comum_widgets/card_product.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -11,39 +11,45 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int currentPageIndex = 0;
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: NavigationBar(
-        height: 60,
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        indicatorColor: thirdColor,
-        selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
-          NavigationDestination(
-            icon: Icon(Icons.home),
-            label: 'home',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.settings),
-            label: 'settings',
-          ),
-        ],
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 20.0,
+        crossAxisSpacing: 20.0,
       ),
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: <Widget>[
-        const SettingsPage(),
-        const SettingsPage(),
-      ][currentPageIndex],
+      itemCount: 4,
+      padding: const EdgeInsets.all(5),
+      itemBuilder: (BuildContext context, int index) {
+        return const CardProduct();
+      },
     );
+    // return Column(
+    //   children: [
+    //     const Padding(
+    //       padding: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 50),
+    //       child: Row(
+    //         mainAxisAlignment: MainAxisAlignment.center,
+    //         children: [
+    //           Expanded(
+    //             child: SearchBar(
+    //               leading: Icon(Icons.search),
+    //             ),
+    //           ),
+    //         ],
+    //       ),
+    //     ),
+
+    //     // const Flex(
+    //     //   direction: Axis.vertical,
+    //     //   children: [
+    //     //     CardProduct(),
+    //     //     CardProduct(),
+    //     //     CardProduct(),
+    //     //   ],
+    //     // ),
+    //   ],
+    // );
   }
 }
